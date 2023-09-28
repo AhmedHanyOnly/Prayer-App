@@ -1,0 +1,22 @@
+body {
+  font-family: "Cairo", sans-serif !important;
+  color: black;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  direction: rtl;
+  background-color: #29231c;
+}
+// All Rest
+* {
+  @include all-reset;
+}
+// a Reset
+a {
+  @include a-reset;
+}
+// reset btn
+button {
+  border: none;
+  outline: none;
+}
+

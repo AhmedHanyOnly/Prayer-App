@@ -1,0 +1,131 @@
+//All Element Reset And Box Sizing
+@mixin all-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+//A Element Reset
+@mixin a-reset {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: black;
+  }
+}
+//List Reset
+@mixin ul-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+//Create Circle
+@mixin circle($px) {
+  border-radius: 50%;
+  width: $px;
+  height: $px;
+}
+// Reset Default position
+@mixin reset-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+//centering
+@mixin centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+//centering position & transform
+@mixin center-p-t {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//Full Width & Height
+@mixin full-w-h {
+  width: 100%;
+  height: 100%;
+}
+//Overlay Before
+@mixin overlay-before($bg, $opc) {
+  position: relative;
+  z-index: 5;
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    background-color: rgba($bg, $opc);
+  }
+}
+//Overlay After
+@mixin overlay-after($bg, $opc) {
+  position: relative;
+  z-index: 1;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: -1;
+    bottom: 0;
+
+    right: 0;
+    background-color: rgba($bg, $opc);
+  }
+}
+//Edit Element On Different Screens
+//min media
+@mixin minWidth($size) {
+  @if $size == sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == xll {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+//max media
+@mixin maxWidth($size) {
+  @if $size == xs {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (max-width: 1399.98px) {
+      @content;
+    }
+  }
+}
+

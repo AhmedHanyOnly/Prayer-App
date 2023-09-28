@@ -1,0 +1,46 @@
+.MuiSelect-select {
+  border: 1px solid #fff !important;
+  &:hover {
+    border-color: rgba($color: #fff, $alpha: 0.5) !important;
+    outline: none !important;
+  }
+  &:focus {
+    border-color: rgba($color: red, $alpha: 0.5) !important;
+    outline: none !important;
+  }
+  &[aria-expanded="true"] {
+    border-color: rgba($color: red, $alpha: 0.5) !important;
+  }
+}
+.MuiSvgIcon-root {
+  color: #fff !important;
+}
+
+.card-holder {
+  margin-top: 100px;
+  display: flex;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+  @include maxWidth(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    .prayer-card {
+      .prayer-text {
+        font-size: 35px;
+      }
+      .time-text {
+        font-size: 60px;
+        text-align: center;
+      }
+    }
+  }
+}
+.lable-select {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transform: translate(10px, -12px) !important;
+}
+

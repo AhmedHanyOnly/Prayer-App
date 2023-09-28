@@ -1,0 +1,21 @@
+.head-title {
+  .text {
+    padding: 20px;
+    font-size: 18px;
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .sub-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: $sec-color;
+    }
+    border-bottom: 2px solid rgba($color: #fff, $alpha: 0.1);
+  }
+  @include maxWidth(sm) {
+    .text {
+      text-align: center;
+    }
+  }
+}
