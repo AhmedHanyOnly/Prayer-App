@@ -9,6 +9,11 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import axios from "axios";
 import moment from "moment";
 import "moment/dist/locale/ar-dz";
+import imgFajr from "./assets/fajr-prayer.png";
+import imgDohr from "./assets/dhhr-prayer-mosque.png";
+import imgAsr from "./assets/asr-prayer-mosque.png";
+import imgMagrib from "./assets/sunset-prayer-mosque.png";
+import imgEsha from "./assets/night-prayer-mosque.png";
 const MainContent = () => {
   const [Today, setToday] = useState<string>();
   const [Timing, setTiming] = useState<any>({});
@@ -166,31 +171,11 @@ const MainContent = () => {
         TimeOutPrayer={TimeOutPrayer}
       />
       <div className="card-holder">
-        <CardPrayer
-          title="الفجر"
-          time={Timing.Fajr}
-          img="/src/assets/asr-prayer-mosque.png"
-        />
-        <CardPrayer
-          title="الظهر"
-          time={Timing.Dhuhr}
-          img="/src/assets/dhhr-prayer-mosque.png"
-        />
-        <CardPrayer
-          title="العصر"
-          time={Timing.Asr}
-          img="/src/assets/fajr-prayer.png"
-        />
-        <CardPrayer
-          title="المغرب"
-          time={Timing.Maghrib}
-          img="/src/assets/night-prayer-mosque.png"
-        />
-        <CardPrayer
-          title="العشاء"
-          time={Timing.Isha}
-          img="/src/assets/sunset-prayer-mosque.png"
-        />
+        <CardPrayer title="الفجر" time={Timing.Fajr} img={imgFajr} />
+        <CardPrayer title="الظهر" time={Timing.Dhuhr} img={imgDohr} />
+        <CardPrayer title="العصر" time={Timing.Asr} img={imgAsr} />
+        <CardPrayer title="المغرب" time={Timing.Maghrib} img={imgMagrib} />
+        <CardPrayer title="العشاء" time={Timing.Isha} img={imgEsha} />
       </div>
       <Stack
         direction="row"
@@ -199,7 +184,10 @@ const MainContent = () => {
         flexWrap={"wrap"}
       >
         <FormControl className="w-50 text-light">
-          <InputLabel id="demo-simple-select-label" className="text-light lable-select">
+          <InputLabel
+            id="demo-simple-select-label"
+            className="text-light lable-select"
+          >
             المدينة
           </InputLabel>
           <Select
